@@ -59,7 +59,7 @@ var login = async (req,res,next)=>{
 			status : -1
 		})
 	}
-
+	
 };
 
 var register = async (req,res,next) => {
@@ -227,19 +227,37 @@ var verifyImg = async(req,res,next) => {
 };
 
 var uploadUserHead = async(req,res,next) => {
+	let getIP = function() {
+		let interfaces = require("os").networkInterfaces();
+		for (var devName in interfaces) {
+		  var iface = interfaces[devName];
+		  for (var i = 0; i < iface.length; i++) {
+			let alias = iface[i];
+			if (
+			  alias.family === "IPv4" &&
+			  alias.address !== "127.0.0.1" &&
+			  !alias.internal
+			) {
+			  if (alias.address) {
+				return 'http://'+alias.address+':3000/uploads/';
+			  }
+			}
+		  }
+		}
+	  };
 	await fs.rename( 'public/uploads/' + req.file.filename , 'public/uploads/' + req.session.username + '.jpg',
 		function(err){
  			if(err){
   				throw err;
  			}
 		});
-	var result = await UserModel.updateUserHead(req.session.username,url.resolve(Head.baseUrl,req.session.username + '.jpg'));
+	var result = await UserModel.updateUserHead(req.session.username,url.resolve(getIP(),req.session.username + '.jpg'));
 	if(result){
 		res.send({
 			msg : '头像修改成功',
 			status : 0,
 			data : {
-				userHead : url.resolve(Head.baseUrl,req.session.username + '.jpg')
+				userHead : url.resolve(getIP(),req.session.username + '.jpg')
 			}
 		});
 	}

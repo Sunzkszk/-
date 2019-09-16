@@ -67,7 +67,7 @@ import axios from 'axios';
 </script>
 
 <style scoped>
-#body .body_up{
+	#body .body_up{
 		width:100%;
 		height:50%;
 		display: flex;
@@ -118,6 +118,7 @@ import axios from 'axios';
 		margin-left:3px;
 	}
 	#content{
-		height: 20px;
+		height: 100%;
+		width: 100%;
 	}
 </style>

@@ -56,7 +56,7 @@ var findLogin = (data)=>{
 };
 
 var updateUserHead = ( username , userHead ) => {
-	return UserModel.update({username} , { $set : { userHead } })
+	return UserModel.updateOne({username} , { $set : { userHead } })
 			.then(()=>{
 				return true;
 			})

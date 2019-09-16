@@ -6,7 +6,7 @@
 				<tr style="border-bottom:1px black solid;">
 					<td style="width:20%;border-right:1px black solid;">姓名</td>
 					<td style="width:40%;border-right:1px black solid;">学号</td>
-					<td style="width:40%;">提交申请时间</td>
+					<td style="width:40%;">申请时间</td>
 				</tr>
 				<div v-for="student in students" style="border-bottom:1px black solid;cursor:pointer;" @click="chooseStudent(student)" :id="student.fromUser">
 					<tr>

@@ -27,8 +27,7 @@ var MongooseMail = {
 };
 
 var Head = {
-	
-	baseUrl : '10.120.19.240:3000/uploads/',
+	baseUrl : "10.120.19.240:3000/uploads/",
 }
 
 module.exports = {

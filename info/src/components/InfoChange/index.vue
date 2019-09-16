@@ -77,7 +77,7 @@
 	}
 	.infochange .information p{
 		font-size: 1rem;
-		margin:4% 1% 4% 1%;
+		
 		font-weight: bold;
 	}
 	.infochange .information{
@@ -92,5 +92,6 @@
 		display: flex;
 		align-items: center;
 		flex-direction:column;
+		height: 100%;
 	}
 </style>

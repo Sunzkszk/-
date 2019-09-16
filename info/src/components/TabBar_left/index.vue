@@ -1,6 +1,6 @@
 <template>
 		<div class="tabbar-left">
-			<ul class="public">
+			<ul class="public" style="height:39%">
 				<li style="background-color:#4169E1;font-weight:bold;">公共信息</li>
 				<router-link to="/home/public/学历硕士培养方案">
 					<li @click="changeTitle">学历硕士培养方案</li>
@@ -21,7 +21,7 @@
 					<li>专业学位培养方案</li>
 				</router-link>
 			</ul>
-			<ul class="personal">
+			<ul class="personal" style="height:22%">
 				<li style="background-color:#4169E1;font-weight:bold;">个人信息</li>
     			<router-link to="/home/personinfo/个人基本信息">
 					<li @click="changeTitle">个人基本信息</li>
@@ -33,7 +33,7 @@
 					<li>登录密码修改</li>
 				</router-link>	
 			</ul>
-			<ul class="educate">
+			<ul class="educate" style="height:22%">
 				<li style="background-color:#4169E1;font-weight:bold;">培养管理</li>
     			<router-link to="/home/educate/个人课表查询">
 					<li>个人课表查询</li>
@@ -45,7 +45,7 @@
 					<li>学业师生互选</li>
 				</router-link>
 			</ul>
-			<ul class="inter">
+			<ul class="inter" style="height:17%">
 				<li style="background-color:#4169E1;font-weight:bold;">互动信息</li>
     			<router-link to="/home/inter/教学评价">
 					<li>教学评价</li>
@@ -75,19 +75,20 @@
 
 <style scoped>
 	.tabbar-left ul{
-		margin-bottom: 5px;
+		margin-bottom: 2px;
 		margin-left:1px;
 		background-color:#AFEEEE;
 		width: 100%;
-		height: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		overflow-y: scroll;
 	}
 	.tabbar-left ul li{
 		font-size: 1.1rem;
 		margin-bottom:6.6px;
 		width: 100%;
+		
 	}
 	.tabbar-left{
 		display: flex;

@@ -5,20 +5,18 @@
 				<img :src="$store.state.user.userHead">
 				<input type="file" name="file" value="上传头像" @change="handleToUpload">
 			</div>
-			<div class="person">
-				<div v-if="$store.state.user.isTeacher" style="line-height:25px;">
-            		<p>工号：{{ $store.state.user.username }}</p>
-					<p>姓名： {{ $store.state.user.name }}</p>
-					<p>用户身份：教工</p>
-            	</div>
-            	<div v-else>
-            		<p>学号：{{ $store.state.user.username }}</p>
-					<p>姓名： {{ $store.state.user.name }}</p>
-					<p>年级：{{ $store.state.user.grade }}</p>
-					<p>导师：{{ $store.state.user.teacher }}</p>
-					<p>用户身份：学生</p>
-            	</div>
-			</div>
+			<div v-if="$store.state.user.isTeacher" style="line-height:25px;" class="person">
+            	<p>工号：{{ $store.state.user.username }}</p>
+				<p>姓名： {{ $store.state.user.name }}</p>
+				<p>用户身份：教工</p>
+            </div>
+            <div v-else class="person">
+            	<p>学号：{{ $store.state.user.username }}</p>
+				<p>姓名： {{ $store.state.user.name }}</p>
+				<p>年级：{{ $store.state.user.grade }}</p>
+				<p>导师：{{ $store.state.user.teacher }}</p>
+				<p>用户身份：学生</p>
+            </div>
 		</div>
 		<div class="lesson">
 			我的课表
@@ -96,8 +94,10 @@
 
 <style>
 	.tabbar-right .basisInfo .person{
-		height: 50%;
-		margin-top: 10%;
+		height: 70%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
 	}
 	.tabbar-right .basisInfo .headImg input{
 		width: 100%;
@@ -109,7 +109,7 @@
 	}
 	.tabbar-right .basisInfo .headImg{
 		width: 70%;
-		height: 50%;
+		height: 30%;
 	}
 	.tabbar-right .basisInfo{
 		margin-top: 5%;
@@ -118,6 +118,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: space-around;
 		border-bottom: 2px solid black;
 	}
 	.tabbar-right .lesson{
